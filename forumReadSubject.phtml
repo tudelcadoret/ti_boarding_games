@@ -1,0 +1,41 @@
+<main class="forumReadSubject">
+    
+    <h1>Réponses au sujet : <?= htmlspecialchars($forum['title']) ?></h1>
+    
+    <?php foreach($forum_comments as $forum_comment) : ?>
+    
+        <section>
+            
+            <div>
+                <p><?= htmlspecialchars($forum_comment['pseudo']) ?></p>
+                <p><?= htmlspecialchars($forum_comment['date_creation']) ?></p>
+            </div>
+            
+            <p><?= htmlspecialchars($forum_comment['comment']) ?></p>
+            
+            <?php if($_SESSION['req']['isAdmin'] == 1) : ?>
+                <a href="forumReadSubject.php?delete=<?= $forum_comment['id_comment_forum'] ?>&id_forum=<?= $forum['id_forum'] ?>">Supprimer</a>
+            <?php endif ?>
+            
+        </section>
+        
+    <?php endforeach; ?>
+    
+    
+    <h1>Ajouter un commentaire</h1>
+    
+    <form method="post" class="flex">
+        
+        <?php if (isset($error_comment)){ ?>
+            <div class="errorForm"><?= $error_comment ?></div>
+        <?php } ?>
+        
+        <textarea id="comment" name="comment" rows="5" cols="33" placeholder="Votre commentaire ici"></textarea>
+        <input type="hidden" name="forum_id" value="<?= intval($forum['id_forum']) ?>" />
+        <input type="hidden" name="user_id" value="<?= intval($user_profil['id']) ?>" />
+        
+        <button type="submit">Envoyer</button>
+
+    </form>
+
+</main>
