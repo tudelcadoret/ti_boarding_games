@@ -1,0 +1,38 @@
+<main class="login">
+      
+      <h1>Connectez-vous</h1>
+      
+      <p>Pas encore de compte ? Venez nous rejoindre <a href="register">ici</a></p>
+
+      <!-- si un message de validation existe, il est affiché à la place du formulaire-->
+      <?php if($message != null ) : ?>
+            <?= $message ?>
+      <?php else :?>
+      
+      <form method="post" action="login.php">
+            
+            <!-- messages d'erreurs -->
+            <?php if (isset($erreur_mail)){ ?>
+                  <div class="errorForm"><?= $erreur_mail ?></div>
+            <?php } ?> 
+            <?php if (isset($erreur_mdp)){ ?>
+                  <div class="errorForm"><?= $erreur_mdp ?></div>
+            <?php } ?> 
+            
+            <div class="flex">
+                  <!-- champs de formulaire -->
+                  <input type="email" placeholder="Mail" name="mail" value="<?php if(isset($mail)){ echo $mail; }?>">
+                  <input type="password" placeholder="Mot de passe" name="mdp" value="<?php if(isset($mdp)){ echo $mdp; }?>">
+                  
+                  <!-- bouton -->
+                  <button type="submit" name="connexion">Je me connecte</button>
+            </div>
+            
+            
+            
+      </form>
+      <?php endif ?>
+
+</main>
+
+
