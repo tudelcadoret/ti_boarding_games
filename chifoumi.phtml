@@ -1,0 +1,82 @@
+<main class="chifoumi">
+
+    <h1>Chifoumi</h1>
+  
+  
+    <!-- règles du jeu ***************************************************** -->
+    <section id="chifoumi_rules">
+        
+      <h2>Règles du jeu</h2>
+      
+      <p>Tentez de gagner 3 manches contre l'IA</p>
+      <p>La pierre gagne contre les ciseaux</p>
+      <p>La feuille gagne contre la pierre</p>
+      <p>Les ciseaux gagnent contre la feuille</p>
+      <button id="chifoumi_start" class="btn">Je joue !</button>      
+      
+    </section>
+  
+  
+    <!-- choix du joueur ***************************************************** -->
+    <section id="chifoumi_choice" class="hidden">
+          
+        <h2>Que choisissez-vous ?</h2>    
+      
+        <button id="pierre" class="chifoumi_choice">
+            <img src="img/chifoumi/pierre.png" alt="pierre"></img>
+        </button>
+        
+        <button id="feuille" class="chifoumi_choice">
+            <img  src="img/chifoumi/feuille.png" alt="feuille"></img>
+        </button>
+        
+        <button id="ciseaux" class="chifoumi_choice">
+            <img  src="img/chifoumi/ciseaux.png" alt="ciseaux"></img>
+        </button>
+        
+    </section>
+    
+    
+    <!-- comparaison ***************************************************** -->
+    <section id="chifoumi_results" class="hidden">
+          
+        <h2>Résultats de la manche</h2>    
+            
+        <div class="flex">
+            
+            <div>
+                <p class="joueur">Joueur</p>
+                <p id="scorePlayer" class="score"></p>
+                <div id="comparePlayer"></div>
+            </div>
+            
+            <div>
+                <div id="resultat"></div>
+                <p><i class="victory far fa-laugh-wink"></i></p>
+                <button id="chifoumi_continue" class="btn">Continuer</button>   
+            </div>
+            
+            <div>
+                <p class="joueur">IA</p>
+                <p id="scoreIA" class="score"></p>
+                <div id="compareIA"></div>
+            </div>
+            
+        </div>
+        
+    </section>
+  
+  
+    <!-- fin du jeu ***************************************************** -->
+    <section id="chifoumi_endGame" class="hidden"> 
+    
+        <h2>Fin du jeu</h2>  
+    
+        <div id="message"></div>
+        
+        <button id="chifoumi_reset" class="btn">Nouvelle partie</button> 
+    
+    </section>
+    
+</main>
+
