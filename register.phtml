@@ -1,0 +1,68 @@
+<main class="register">
+      
+      <h1>Pour s'inscrire</h1>
+      
+      <!-- si un message de validation existe, il est affiché à la place du formulaire-->
+      <?php if($message) : ?>
+          <p><?= $message ?>, vous pouvez maintenant vous <a href="login">connecter</a></p>
+      <?php else :?>
+      
+      <form method="post" action="register">
+            
+
+            <!-- affiche les erreurs sur le nom -->
+            <?php if (isset($erreur_nom)){ ?>
+                  <div><?= $erreur_nom ?></div>
+            <?php } ?>   
+            
+            <!-- affiche les erreurs sur le prénom -->
+            <?php if (isset($erreur_prenom)){ ?>
+                  <div><?= $erreur_prenom ?></div>
+            <?php } ?> 
+            
+            <!-- affiche les erreurs sur le pseudo -->
+            <?php if (isset($erreur_pseudo)){ ?>
+                  <div><?= $erreur_pseudo ?></div>
+            <?php } ?> 
+            
+            <!-- affiche les erreurs sur le mail -->
+            <?php if (isset($erreur_mail)){ ?>
+                  <div><?= $erreur_mail ?></div>
+            <?php } ?> 
+            
+            <!-- affiche les erreurs sur le mot de passe -->
+            <?php if (isset($erreur_mdp)){ ?>
+                  <div><?= $erreur_mdp ?></div>
+            <?php } ?> 
+            
+            <!-- champs de formulaire -->
+            
+            <div class="flex">
+            
+                  <span></span>
+                  <span id="errorFormat"></span>
+            
+                  <input type="text" placeholder="Votre nom" name="nom" id="nom" value="<?php if(isset($nom)){ echo $nom; }?>" required>
+                  <input type="text" placeholder="Votre prénom" name="prenom" id="prenom" value="<?php if(isset($prenom)){ echo $prenom; }?>" required>     
+                  <input type="text" placeholder="Choisissez un pseudo" name="pseudo" id="pseudo" value="<?php if(isset($pseudo)){ echo $pseudo; }?>" required>
+                  <input type="email" placeholder="Votre mail" name="mail" id="mail" value="<?php if(isset($mail)){ echo $mail; }?>" required>
+                  <input type="password" placeholder="Choisissez un mot de passe" name="mdp" value="<?php if(isset($mdp)){ echo $mdp; }?>">
+                  <input type="password" placeholder="Confirmez le mot de passe" name="confmdp">
+                  
+                  <div>
+                        <button type="submit" name="inscription" id="inscription">Envoyer</button>
+                        <button type="reset">Annuler</button>
+                  </div>
+                  
+            </div>
+            
+      </form>
+      <?php endif ?>
+
+</main>
+
+
+
+
+
+
