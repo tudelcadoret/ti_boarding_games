@@ -1,0 +1,29 @@
+<main class="games_list">
+            
+    <h1>Découvrez notre sélection de jeux</h1>
+    
+    <table>
+        
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <?php foreach($req_games as $req_game) : ?>
+            <tr>
+                <td>
+                    <a href="<?= htmlspecialchars($req_game['game_name']) ?>"><?= htmlspecialchars($req_game['game_name']) ?></a>
+                </td>
+                <td>
+                    <a href="<?= htmlspecialchars($req_game['game_name']) ?>"><?= htmlspecialchars($req_game['game_description']) ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+        
+    </table>
+    
+</main>
