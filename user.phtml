@@ -1,0 +1,56 @@
+<main class='user'>
+    
+    <h1>A propos de <?= $user_profil['pseudo'] ?></h1>
+    
+    <section>
+    
+        <h2>Vos données actuelles</h2>
+        
+        <div class="flex">
+            <p>Nom : <?= htmlspecialchars($user_profil['nom']) ?></p>
+            <p>Prénom : <?= htmlspecialchars($user_profil['prenom']) ?></p>
+            <p>Pseudo : <?= htmlspecialchars($user_profil['pseudo']) ?></p>
+        </div>
+        
+    </section>
+            
+    
+    <section>
+        
+        <h2>Modifier vos informations</h2>
+                
+        <form method="post" action="user">
+            
+            <!-- messages d'erreurs -->
+            <?php if (isset($error_nom)){ ?>
+                <div class="errorForm"><?= $error_nom ?></div>
+            <?php } ?>
+            <?php if (isset($error_prenom)){ ?>
+                <div class="errorForm"><?= $error_prenom ?></div>
+            <?php } ?>
+            
+            <div class="flex">
+                
+                <!-- champs de formulaire -->
+                <label for="nom">Nom</label>
+                <input type="text" name="newNom" id="nom"/>
+                <input type="hidden" name="nom" value="<?= htmlspecialchars($user_profil['nom']) ?>" />
+                
+                <label for="prenom">Prénom</label>
+                <input type="text" name="newPrenom"/>
+                <input type="hidden" name="prenom" value="<?= htmlspecialchars($user_profil['prenom']) ?>" />
+                
+                <label for="pseudo">Pseudo</label>
+                <input type="text" name="newPseudo"/>
+                <input type="hidden" name="pseudo" value="<?= htmlspecialchars($user_profil['pseudo']) ?>" />
+                
+            </div>
+                
+            <!-- bouton -->
+            <button type="submit" name="updateUser" id="updateUser">Envoyer</button>
+        
+        </form>
+        
+    </section>
+    
+</main>
