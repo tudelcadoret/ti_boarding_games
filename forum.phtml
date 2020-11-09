@@ -1,0 +1,91 @@
+<main class=" forum">
+
+    <h1>Bienvenue sur le forum</h1>
+    
+    <section>
+        
+        <h2>Tous les sujets</h2>
+        
+        <table>
+            
+            <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Auteur</th>
+                    <th>Dernier post</th>
+                    <?php if($_SESSION['req']['isAdmin'] == 1) : ?>
+                        <th>Action</th>
+                    <?php endif ?>
+                </tr>
+            </thead>
+            
+            <?php foreach($forums as $forum) : ?>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="forumReadSubject.php?id_forum=<?= $forum['id_forum'] ?>">
+                            <?= htmlspecialchars($forum['title']) ?>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="forumReadSubject.php?id_forum=<?= $forum['id_forum'] ?>">
+                            <?= htmlspecialchars($forum['pseudo']) ?>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="forumReadSubject.php?id_forum=<?= $forum['id_forum'] ?>">
+                            <?= htmlspecialchars($forum['date']) ?>
+                        </a>
+                    </td>
+                    <td>
+                        <?php if($_SESSION['req']['isAdmin'] == 1) : ?>
+                            <a class="deleteBtn" href="forum.php?delete=<?= $forum['id_forum'] ?>&id_forum=<?= $forum['id_forum'] ?>">Supprimer</a>
+                        <?php endif ?>
+                    </td>
+                    
+                </tr>
+            </tbody>
+            <?php endforeach; ?>
+            
+        </table>
+
+    </section>
+    
+    <!--***************************************************************************-->
+    <section>
+        
+        <h2>Nouveau sujet</h2>
+        
+        <form method="post">
+            
+            <?php if (isset($error_title)){ ?>
+                <div class="errorForm"><?= $error_title ?></div>
+            <?php } ?>
+            
+            <?php if (isset($error_content)){ ?>
+                <div class="errorForm"><?= $error_content ?></div>
+            <?php } ?>
+            
+            <fieldset>
+                
+                <legend>Saisir le titre</legend>
+                <input type="text" name="title"/>
+                <input type="hidden" name="user_id" value="<?= htmlspecialchars($user_profil['id']) ?>" />
+                
+            </fieldset>
+            
+            <fieldset>
+                
+                <legend>Ecrire le contenu</legend>
+                <textarea id="content" name="content" rows="5" cols="33"></textarea>
+                
+            </fieldset>
+                
+            <button type="submit">Envoyer</button>
+    
+        </form>
+        
+    </section>
+
+</main>
+
