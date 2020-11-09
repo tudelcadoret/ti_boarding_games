@@ -1,0 +1,43 @@
+<main class="admin">
+
+    <h1>Panneau d'administration</h1>
+    
+    <!-- games list *********************************************************-->
+    <section>
+        
+        <h2>Liste des jeux</h2>
+        
+        <!-- messages d'erreurs -->
+        <?php if (isset($error_description)){ ?>
+            <div class="errorForm"><?= $error_description ?></div>
+        <?php } ?>
+        
+        <?php foreach($req_games as $req_game) : ?>
+        <div>
+            
+            <form method="post" action="admin">
+                
+                <!-- champs de saisie -->
+                <fieldset>
+                    
+                    <legend><?= htmlspecialchars($req_game['game_name']) ?></legend>
+                    
+                    <p>Description actuelle : <?= htmlspecialchars($req_game['game_description']) ?></p>
+                    
+                    <input type="hidden" name="game_id" value="<?= $req_game['game_id'] ?>"/>
+                    <input type="hidden" name="game_name" value="<?= $req_game['game_name'] ?>"/>
+                    <input type="text" name="game_description" placeholder="Nouvelle description"/>
+                    
+                    <!-- bouton -->
+                    <button type="submit" name="updateGamesList" id="updateGamesList">Envoyer</button>
+                    
+                </fieldset>
+                
+            </form>
+            
+        </div>
+        <?php endforeach; ?>
+        
+    </section>
+    
+</main>
