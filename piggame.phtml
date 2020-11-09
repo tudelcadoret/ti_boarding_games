@@ -1,0 +1,88 @@
+<main class="piggame">
+
+    <h1>Pig Game</h1>
+  
+  
+    <!-- règles du jeu ***************************************************** -->
+    <section id="piggame_rules">
+        
+        <h2>Règles du jeu</h2>
+      
+        <p>Tentez d'obtenir 50 points avant un autre joueur en local.</p>
+        <p>Le joueur actif lance un dé.</p>
+        <p>Tant que le résultat du dé est différent de 1, le joueur continue de jouer.</p>
+        <p>Pendant son tour, il peut lancer un dé pour tenter un pari ou ajouter les points de son pari à sa cagnotte.</p>
+        <p>Si le joueur actif fait 1 en lançant son dé, il doit passer la main.</p>
+        <button id="piggame_start" class="btn">Je joue !</button>      
+      
+    </section>
+      
+    <!-- choix du joueur1 *************************************************** -->
+    <section id="piggame_joueur1" class="hidden">
+          
+        <h2>J1, à vous de jouer !</h2>  
+        
+        <div class="flex">
+            
+            <div class="flex">
+                <p>Votre cagnotte</p>
+                <p id="cagnottePlayer1" class="borderScore"></p>
+            </div>
+            
+            <div class="flex">
+                <p>Votre pari actuel</p>
+                <p id="pariPlayer1" class="borderScore"></p>
+            </div>
+               
+        </div>
+        
+    </section>
+    
+    <!-- choix du joueur 2*************************************************** -->
+    <section id="piggame_joueur2" class="hidden">
+          
+        <h2>J2, c'est à votre tour !</h2>    
+        
+        <div class="flex">
+            
+            <div class="flex">
+                <p>Votre cagnotte</p>
+                <p id="cagnottePlayer2" class="borderScore"></p>
+            </div>
+            
+            <div class="flex">
+                <p>Votre pari actuel</p>
+                <p id="pariPlayer2" class="borderScore"></p>
+            </div>
+               
+        </div>
+        
+    </section>
+    
+    <!-- boutons d'actions*************************************************** -->
+    <section id="piggame_buttons" class="hidden">
+        
+        <h2>Que voulez-vous faire ?</h2>
+        
+        <div id="dice_img"></div>
+        <div id="emo"></div>
+        <div id="result"></div>
+        
+        <div class="flex">
+            <button id="piggame_draw" class="btn">Lancer un dé</button>  
+            <button id="piggame_addPoints" class="btn">Garder</button> 
+            <button id="piggame_passTurn" class="btn hidden">Passer</button> 
+        </div>
+        
+    </section>
+    
+    <!-- fin de partie*************************************************** -->
+    <section id="piggame_endGame" class="hidden">
+        
+        <p id="message"></p>
+        <button id="piggame_reset" class="btn">Nouvelle partie</button> 
+        
+    </section>
+    
+</main>
+
