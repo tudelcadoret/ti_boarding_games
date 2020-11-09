@@ -1,0 +1,563 @@
+/*  POLICES************************************************************************************************************** */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Josefin+Sans&display=swap');
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h1, nav {
+    font-family: 'Architects Daughter', cursive;
+}
+
+
+
+/*  GENERAL************************************************************************************************************** */
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body {
+    text-align: center;
+    background-image: url('../img/bg_bois.jpg');
+    font-size:3rem;
+}
+
+img {
+	max-width:100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin : 0;
+}
+
+.flex {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.hidden {
+    display:none;
+}
+
+.errorForm{
+    color:red;
+    font-weight:bold;
+}
+
+.inputNotValid {
+  background-color: red;
+  color:white;
+}
+
+.dataFormatNotValid {
+  background-color: orange;
+  color:white;
+}
+
+
+
+/*  HEADER************************************************************************************************************** */
+header {
+    background-color: #1B8F9E;
+    border-radius: 5px;
+    box-shadow: 5px 4px 4px black;
+    margin:70px auto 40px;
+	max-width:90%;
+	min-width:700px;
+}
+
+header nav a {
+    color:white;
+    padding: 35px 0px;
+    text-transform: uppercase;
+}
+
+header nav a:hover{
+    color:blue;
+}
+
+header .fas, header .fab{
+    display: block;
+    padding: 10px 0px;
+    font-size : 50px;
+}
+
+
+/*  MAIN************************************************************************************************************** */
+main {
+    margin :16px 10%;
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 5px;
+    box-shadow: 5px 4px 4px black;
+    margin: 0 auto;
+	max-width:80%;
+	min-width:700px;
+}
+
+h1 {
+    color:black;
+    padding-top: 25px;
+    font-size : 5rem;
+}
+
+h2{
+    font-size:4rem;
+}
+
+
+/* INDEX.PHTML******************/
+.index{
+    padding-bottom: 40px;
+}
+
+.index h1 {
+    padding: 100px 0px 0px;     
+}
+
+.relative{
+    position : relative;
+    height: 250px;
+    width: 350px;
+    background-color:#87CEFA;
+}
+
+.absolute{
+    position : absolute;
+    height: 240px; 
+    width: 340px;
+    transform: translate(0px,0px);
+    transition-duration: 0.8s;
+    z-index:1;
+}
+
+.absolute:hover{
+    transform: translate(400px,0px);
+    transition-timing-function: ease-in;
+}
+
+.index p{
+    padding-top: 25px;
+}
+
+
+
+/* GAMES.PHTML******************/
+.games_list table {
+    margin: 0 auto;
+    width:100%;
+    border-collapse: collapse;
+}
+
+.games_list td {
+    border-top: 1px solid grey;
+    padding: 5px 0px;
+}
+
+.games_list td:nth-child(1){
+    text-transform: capitalize;
+}
+
+.games_list tbody tr:nth-child(odd)
+{
+    background-color:#F9F9F9;
+}
+
+
+/* CHIFOUMI.PHTML******************/
+
+/* boutons "je joue", "nouvelle partie" et "continuer" */
+.chifoumi .btn{
+    margin:15px 0px;
+    padding:10px;
+    border-radius:5px;
+    color:white;
+    background-color: #848484;
+}
+
+.chifoumi .btn:hover{
+    background-color: white;
+    color:#848484;
+}
+
+/* écarte les sections les unes des autres*/
+.chifoumi section{
+    padding-bottom: 20px;
+}
+
+.victory, .defeat, .neutral{
+    font-size:100px;
+}
+
+.victory{
+    color:green;
+}
+
+.defeat{
+    color:red;
+}
+
+.neutral{
+    color:orange;
+}
+
+/*écarte le premier p des autres dans rules*/
+.chifoumi #chifoumi_rules p:nth-child(2){
+    padding: 15px;
+}
+
+/* choix du joueur */
+.chifoumi .chifoumi_choice{
+    margin:15px;
+    border-radius:50%;
+    border:4px black solid;
+    background-color: white;
+}
+
+.chifoumi .chifoumi_choice:hover{
+    border:4px black dashed;
+}
+
+
+.chifoumi .chifoumi_choice img{
+    border-radius:50%;
+}
+
+/* noms des joueurs */
+.chifoumi #chifoumi_results .joueur{
+    text-transform : uppercase;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+/* scores des joueurs*/
+.chifoumi #chifoumi_results .score{
+    background-color: #5a3a22;
+    color:white;
+    padding: 10px 0px;
+}
+
+/* écarte #resultat et l'iframe l'un de l'autre*/
+.chifoumi #resultat{
+    padding-bottom: 40px;
+}
+
+/* inverse l'image du choix de l'IA*/
+.chifoumi #chifoumi_results #compareIA{
+    transform: rotateY(180deg);
+}
+
+
+/* PIGGAME.PHTML******************/
+.piggame{
+    padding-bottom: 30px;
+}
+
+.piggame .btn{
+    margin:15px 0px;
+    padding:10px;
+    border-radius:5px;
+    color:white;
+    background-color: #848484;
+}
+
+.piggame .btn:hover{
+    background-color: white;
+    color:#848484;
+}
+
+/*écarte le premier p des autres dans rules*/
+.piggame #piggame_rules p:nth-child(2){
+    padding: 15px;
+}
+
+.piggame div div{
+    flex-direction:column;
+    font-weight:bold;
+}
+
+/* écarte le premier p affichage du deuxième p résultat*/
+.piggame div div p:first-child{
+    padding-bottom: 15px;
+}
+
+.piggame .borderScore{
+    border: 2px solid black;
+    border-radius:5px;
+    background-color: #DBDBF5;
+    padding:20px 25px;
+}
+
+.piggame .createdImage{
+    height: 50px;
+    width: 50px;
+}
+
+/* FORUM.PHTML******************/
+.forum{
+    padding-bottom:30px;
+}
+
+.forum li{
+    list-style-type:none;
+}
+
+.forum table{
+    width:60%;
+    margin:0 auto;
+    border-collapse: collapse;
+}
+
+.forum td, .forum th{
+    padding: 10px;
+}
+
+.forum th{
+    text-transform:uppercase;
+}
+
+.forum .deleteBtn, .forum button{
+    background-color:#848484;
+    color:white;
+    padding: 5px;
+}
+
+.forum form{
+    background-color: #D3D3D3;
+    margin:0 auto;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.forum fieldset{
+    padding: 25px 0px;
+    border-radius:10px;
+}
+
+.forum textarea{
+    resize: none;
+}
+
+.forum button{
+    margin-top: 20px;
+}
+
+/* FORUM READ SUBJECT.PHTML******************/
+.forumReadSubject{
+    padding-bottom: 30px;
+}
+
+.forumReadSubject section{
+    width:80%;
+    margin: 0 auto;
+    padding: 20px;
+    border:1px black solid;
+}
+
+.forumReadSubject section:nth-child(even){
+    background-color:#F0F8FF;
+}
+
+.forumReadSubject section:nth-child(odd){
+    background-color:white;
+}
+
+.forumReadSubject section div p:nth-child(1){
+    font-size:1.2em;
+    font-weight:bold;
+    padding: 5px;
+}
+
+.forumReadSubject section div p:nth-child(2){
+    font-size:0.8em;
+    padding: 5px;
+}
+
+.forumReadSubject section p {
+    padding-bottom: 20px;
+}
+
+.forumReadSubject a{
+    background-color:#848484;
+    color:white;
+    padding: 5px;
+}
+
+.forumReadSubject form{
+    background-color: #D3D3D3;
+    width: 80%;
+    margin:0 auto;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.forumReadSubject textarea{
+    resize: none;
+    margin-bottom: 15px;
+}
+
+.forumReadSubject button{
+    background-color:#848484;
+    color:white;
+    padding: 5px;
+}
+
+
+/* USER.PHTML******************/
+.user{
+    padding-bottom: 30px;
+}
+
+.user form{
+    background-color: #D3D3D3;
+    width: 80%;
+    margin:0 auto;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.user form div{
+    flex-direction:column;
+}
+
+.user form input{
+    margin: 10px 0px;
+    padding: 10px;
+}
+
+
+/* ADMIN.PHTML******************/
+.admin{
+    padding-bottom: 30px;
+}
+
+.admin div{
+    margin: 10px 0px;
+}
+
+.admin form{
+    background-color: #D3D3D3;
+    width: 80%;
+    margin:0 auto;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.admin form fieldset{
+    border:1px black solid;
+    border-radius: 30px;
+}
+
+.admin form legend{
+    text-transform:uppercase;
+}
+
+.admin form p{
+    padding-bottom: 15px;
+}
+
+.admin form input{
+    margin:10px;
+}
+
+
+/* REGISTER.PHTML******************/
+.register form {
+    margin:0 auto;
+}
+
+.register form .flex{
+    flex-direction : column;
+}
+
+.register span:nth-child(1) {
+    color:red;
+}
+
+.register span:nth-child(2) {
+    color:orange;
+}
+
+.register input {
+    width: 60%;
+    margin: 10px 0px;
+    padding: 10px 0px;
+}
+
+.register button {
+    margin: 20px 0px;
+    padding: 10px 15px;
+}
+
+/* LOGIN.PHTML******************/
+.login{
+    padding-bottom: 30px;
+}
+
+.login p{
+    background-color: #D3D3D3;
+    width: 60%;
+    margin:0 auto;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.login form{
+    padding-top:30px;
+}
+
+
+
+/*  FOOTER************************************************************************************************************** */
+footer {
+    background-color: #C9342D;
+    color:white;
+    margin-top : 20px;
+    min-width:700px;
+}
+
+footer p{
+    padding: 20px 0px;
+}
+
+footer a {
+    color:white;
+}
+
+footer a:hover{
+    color:black;
+}
+
+footer i {
+    font-size:2.3em;
+}
+
+
+/*  MEDIA QUERIES************************************************************************************************************** */
+
+/*  DESKTOP ****************** */
+@media screen and (min-width: 1025px) {
+    
+    /* inverse column par row */
+    .flex{
+        flex-direction : row;
+    }
+    
+    /* diminue la largeur des formulaires du forum */
+    .forum form, .forumReadSubject form{
+        max-width:600px;
+    }
+}
+
+
+
+
